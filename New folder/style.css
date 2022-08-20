@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+:root{
+    --darkwhite : #c0bdbd;
+    --dark : #242323;    
+    --lightdark : #2d2b2b7e;    
+       
+    --lightshadow: #8f6666eb;
+    --darkshadow: #232323f5;
+    --white : #fff;
+    
+    --orange: #ffa052;
+    
+    --lightpink: #f091d0;
+    --pink : #e106c0;
+    --violate:#600ccef6;
+    --seagreen: #7fa99fe4;
+    --lightblue: #c3eef5;
+    --lightsky : #0cb6ff;
+    --blue : #3500f5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background-color: var(--seagreen);
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    padding: 0.5vw;
+    margin: 0 1vw;
+    font-size: 1.5vw;
+    font-family: Verdana, "Ubuntu" , Tahoma, sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--white);
+    cursor: pointer;
+}
+nav ul .brand{
+    cursor: default;
+    padding:0.5vw 2vw ;
+    color:var(--blue);
+}
+.brandImg{
+    width: 10%
+}
+.li:hover,.li:focus{
+    color:var(--dark);
+    background-color:var(--orange);
+    border-radius: 10%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-color:var(--white);
+    display: grid;
+    place-items: center;
+}
+.mainDiv{
+    position: relative;
+    width: 30vw;
+    z-index: 0;
+    background-color: var(--white);
+    border-radius: 5%;
+    box-shadow: 0.1vw 0.2vw 1.3vw 1vw var(--lightblue);
+    padding: 1vw;
+    margin: 2vw;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.box{
+    padding: 0.2vw;
+    width: 100%;
+    height: 100%;
+}
+.mainDiv #songName{
+    margin: 1vw;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5vh;
+    word-spacing: 0.2vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-family: 'Varela Round', sans-serif;
+}
+.mainDiv #artist{
+    margin: 1vw 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5vh;
+    word-spacing: 0.2vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--darkwhite);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,sans-serif;
+    text-decoration: underline;
+}
+.imgBox{
+    width: 100%;
+    height: 20vw;
+    margin-top:  2vw;
+}
+#img{
+    margin: 0%;
+    width: 70%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0.1vw 0.2vw 1.5vw 0.4vw var(--lightshadow);
+}
+.progressBox{
+    width: 100%;
+    height: 100%;
+    padding: 0.2vw;
+}
+.progressTime{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+}
+.progressBar{
+    width: 100%;
+    height: 0.5vw;
+    border-radius: 10%;
+    margin-top: 0.5vw;
+    box-shadow:0vw 0.1vw 0.6vw 0.2vw var(--lightshadow);
+    position: relative;
+    transition: all 1s linear;
+    cursor: pointer;
+    appearance: none;
+}
+.progress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10% ;
+    height: 100%;
+    background: linear-gradient(90deg,var(--pink)0%, var(--violate)100%) ;
+    border-radius: 10%;
+    box-shadow: 0vw 0.1vw 0.6vw 0.2vw var(--dark);
+    transition: all 1s linear;
+    cursor: pointer;
+    appearance: none;
+}
+.progress::before{
+    content: "";
+    position: absolute;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    top: 50%;
+    right: -0.2vw;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.progressBar:hover .progress::before{
+    opacity: 1;
+}
+.controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw auto;
+}
+.controls .set{
+    background-color: var(--darkwhite);
+    background: linear-gradient(90deg,var(--pink)0%,var(--violate)100%);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color: transparent;
+    font-size: 2vw;
+    cursor: pointer;
+    filter: drop-shadow(0.1vw 0.2vw 1.3vw 1vwvar(var(--lightshadow)));
+}
+.set:hover,.set:focus{
+    -webkit-text-fill-color: var(--orange);
+}
+.controls .playBtn{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    font-size: 1.4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0vw 0.1vw 0.6vw 0.2vw var(--lightpink);
+}
+.controls .playBtn:hover,.controls .playBtn:focus{
+    box-shadow: 0vw 0.1vw 0.6vw 0.2vw var(--seagreen);
+}
+.anime{
+    animation: rotateImg 4s linear  infinite;
+}
+@keyframes rotateImg {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.songlistBox{
+    position: absolute;
+    width: 30vw;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: auto;
+    z-index: 1;
+    background-color: var(--white);
+    border-radius: 5%;
+    margin: 1vw 0;
+    padding: 0.3vw;
+    max-height: 50vh;
+    overflow-y: auto;
+    box-shadow: 0.1vw 0.2vw 1.3vw 1.5vw var(--lightshadow);
+    transition: all 0.2s ease-out;
+}
+.songlistBox.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.songlistBox::-webkit-scrollbar{
+    width: 0;
+}
+.songlistIcon{
+    display: flex;
+        justify-content: space-between;
+}
+.songlistDetails{
+    padding: 0.3vw;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:2px solid #0cb6ff;
+
+}
+.listnames{
+
+}
+#listName,#listArtist{
+    text-transform: capitalize;
+    letter-spacing: 0.5vh;
+    word-spacing: 0.2vw;
+    font-weight: 700;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+#listName{
+    font-size: 1.5vw;
+    opacity: 0.9;
+}
+#listArtist{
+    font-size: 1.2vw;
+    opacity: 0.4;
+}
